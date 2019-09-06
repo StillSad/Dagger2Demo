@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="第一步：用@module标注DemoActivityModule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="第二步：用@Provides标注方法的返回值就是我们需要inject的类型"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="第三步：编写Component接口使用@Component标注这个接口，并使用modules=的方法链接上第一步中编写的Module类；"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="第四步：使用注解Component,表示要将依赖注入到DemoActivity里"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="第五步：injectTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="第一种injectTo:\nDaggerAstudyActivityComponent.create().injectTo(this);"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="第二种injectTo:\nDaggerAstudyActivityComponent.builder().build().injectTo(this);"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.ice.dagger2demo.demo4;
+package com.ice.dagger2demo.demo5;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import com.ice.dagger2demo.R;
 import javax.inject.Inject;
 
 /**
- * 4、使用@Component.Builder（需先了解 3、通过Module传参）
+ * 5、使用@BindsInstance（需先了解 4、使用@Component.Builder）
  */
 public class DemoActivity extends AppCompatActivity {
 
@@ -20,10 +20,11 @@ public class DemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo4);
+        setContentView(R.layout.activity_demo5);
 
+        //在Module的构造函数带有参数且参数被使用的情况下，所生产的Component类就没有create()方法了。
         DaggerDemoComponent.builder()
-                .module(new DemoModule(100))
+                .initMoney(5)
                 .build()
                 .injectTo(this);
         TextView tvValue = findViewById(R.id.tv_value);
